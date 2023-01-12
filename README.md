@@ -1,3 +1,18 @@
+# React Router Dom
+```
+npm install react-router-dom
+```
+
+# SASS styling (SCSS)
+```
+npm install node-sass
+```
+Christina says: the above command did not work. I used this instead, and it saves as a `dev dependency` in package.json:
+```
+npm i sass --save-dev
+```
+Research: [Stack Overflow - Cannot find module 'sass'](https://stackoverflow.com/questions/67161579/cannot-find-module-sass)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
