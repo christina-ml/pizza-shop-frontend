@@ -4,8 +4,13 @@ import './App.css';
 
 
 // Components
-import Navbar from './components/Navbar';
-import Menu from './components/Menu';
+import Navbar from './components/Navbar/Navbar';
+import Menu from './components/Menu/Menu';
+import MenuItemDetails from './components/Menu/MenuItemDetails';
+
+// Placeholders (to avoid Errors)
+import Coupons from './pages/Coupons';
+import Customers from './pages/Customers';
 
 function App() {
   const API = process.env.REACT_APP_API_URL;
@@ -14,7 +19,7 @@ function App() {
 
   useEffect(() => {
     try {
-      fetch(`${API}/pizza`)
+      fetch(`${API}/pizzas`)
         .then((res) => res.json())
         .then(data => {
           console.log(data)
@@ -23,7 +28,7 @@ function App() {
     } catch (err){
       console.log(err)
     }
-  }, [])
+  }, [API])
 
   return (
     <div className="App">
@@ -31,6 +36,9 @@ function App() {
       <Navbar />
         <Routes>
           <Route path="/menu" element={<Menu pizzaData={pizzaData} />} />
+          <Route path="/menu/:id" element={<MenuItemDetails />} />
+          <Route path="/menu/:id/customers" element={<Customers />} />
+          <Route path="/menu/:id/coupons" element={<Coupons />} />
         </Routes>
       </Router>
     </div>
