@@ -1,50 +1,105 @@
-.Navbar {
-    display: grid;
-    grid-template-columns: 1.2fr 2.8fr 2fr;
-    padding: 0px 10px;
-    background-color: darkred;
-    color: white;
+// https://codepen.io/christinaml/pen/MWBOyEP?editors=1100
 
-    &__logo {
-        display: flex;
-        align-items: center;
-        justify-content: left;
-        padding: 5px;
-        &__icon {
-            margin-right: 10px;
-            padding: 5px;
-            min-height: 50px;
-            min-width: 50px;
-            background-color: blue;
-            border-radius: 5px;
-        }
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: 2px solid #b6b6b6;
+  padding: 0 15px;
+  
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+    // vertical align
+    align-items: center;
+  } 
+  
+  &__logo {
+    font-weight: 600;
+    font-size: 2em;
+  }
+  
+  &__items {
+    list-style: none;
+    display: flex;
+    column-gap: 35px;
+    padding: 0;
+  }
+  
+  &__hamburgerMenu {
+    display: none;
+  }
+  
+  &__overlay {
+    display: none;
+  }
+  
+  
+  // mobile screen
+  @media only screen and (max-width: 440px){
+    .navbar {
+      padding: 0;
+      
+      &__container {
+
+        // above the overlay
+        z-index: 10;
+
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 42px;
+        width: 100%;
+      }
+      
+      &__logo {
+        padding: 15px;
+        font-size: 1.5em;
+      }
+      
+      &__items {
+        // display: none;
+        display: block;
+        position: fixed;
+        top: 27px;
+        left: 0;
+        width: 100%;
+        
+        // '& > *' means target all children OR you can use 'li' instead of '& > *'
+        & > * {
+          border-bottom: 1px solid #b6b6b6;
+          padding: 10px;
+          background-color: white;
+        }      
+      }
+      
+      &__hamburgerMenu {
+        display: block;
+        font-size: 1.5em;
+        font-weight: 600;
+        padding: 15px;
+      }
+      
+      &__overlay {
+
+        // below the navbar
+        z-index: 8;
+
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background-color: rgba(1, 1, 1, .5);
+      }
     }
-
-    &__links {
-        margin: 0 30px;
-        ul {
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-
-            li {
-                list-style-type: none;
-                a {
-                    display: block;
-                    width: 50px;
-                    text-align: center;
-                    color: white;
-                    text-decoration: none;
-                    padding: 20px;
-                    background-color: seagreen;
-                    border-radius: 5px;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-    }
+  }
 }

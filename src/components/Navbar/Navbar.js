@@ -5,22 +5,19 @@ import './Navbar.scss';
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
-      <div className="Navbar__logo">
-        <div className="Navbar__logo__icon">
-          icon
+    <div className="navbar">
+        <div className="navbar__container">
+            <div className="navbar__logo"><Link to="/">Student App</Link></div>
+            <ul className="navbar__items">
+              <li><Link to="/menu">Students</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+            <div className="navbar__hamburgerMenu">
+            =
+            </div>
         </div>
-        <h1>Pizza Shop</h1>
-      </div>
-      <div></div>
-      <div className="Navbar__links">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/menu">Menu</Link></li>
-          <li><Link to="/cart">Cart</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
-      </div>
+        <div className="navbar__overlay"></div>
     </div>
   )
 }

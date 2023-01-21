@@ -5,6 +5,7 @@ import './App.css';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
 import MenuItemDetails from './components/Menu/MenuItemDetails';
 
@@ -35,6 +36,7 @@ function App() {
       <Router>
       <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu pizzaData={pizzaData} />} />
           <Route path="/menu/:id" element={<MenuItemDetails />} />
           <Route path="/menu/:id/customers" element={<Customers />} />

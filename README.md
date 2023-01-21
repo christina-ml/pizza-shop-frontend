@@ -1,3 +1,15 @@
+# Z-Index hierarchy
+
+The `Z-Index` scss will allow layering of components in html.
+
+To keep this project organized where `z-index` is used:
+(z-index -> component)
+
+z-index: 10; -> Navbar
+z-index: 8; -> overlay
+z-index: 0; -> Home page
+
+
 # React Router Dom
 ```
 npm install react-router-dom
